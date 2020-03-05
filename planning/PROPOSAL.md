@@ -6,6 +6,8 @@ Inspired by the popular Reddit and Facebook communities, Catspotting is an app f
 
 ## Mockups
 
+<img width="814" alt="Screen Shot 2020-03-04 at 11 27 21 PM" src="https://user-images.githubusercontent.com/57779829/75958358-e932f380-5e70-11ea-8a9d-3063de4c5c5a.png">
+
 ## User Stories
 
 ## Planned Workflow and Responsibilities
