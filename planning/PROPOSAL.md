@@ -83,6 +83,8 @@ Deployment:
 #### Gold
 
 - Integrate Google Maps to search posts by location/display map on post detail page
+- Likes for commments and posts
+- Bookmark posts
 
 #### Platinum
 
@@ -90,3 +92,4 @@ Deployment:
 - Sort by cat? May need to update model to include space for a name/id
 - Pin would then represent the cat's most recent location so as not to have duplicates
 - Groups for cat spotters based on location
+- Ability to share posts externally
