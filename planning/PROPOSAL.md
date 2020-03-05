@@ -6,20 +6,20 @@ Inspired by the popular Reddit and Facebook communities, Catspotting is an app f
 
 ## Mockups
 
-### Welcome Page
+#### Welcome Page
 <img width="814" alt="Screen Shot 2020-03-04 at 11 27 21 PM" src="https://user-images.githubusercontent.com/57779829/75958358-e932f380-5e70-11ea-8a9d-3063de4c5c5a.png">
 
-### Home Page
+#### Home Page
 <img width="815" alt="Screen Shot 2020-03-04 at 11 27 32 PM" src="https://user-images.githubusercontent.com/57779829/75958498-3a42e780-5e71-11ea-8fde-85d037572c97.png">
 
 ## User Stories
 
-Markup : * As a user, I want to login to my account from the welcome page.
-Markup : * As a user, I want the menu to be intuitive and easy to read.
-Markup : * As a user, I want to be able to access/edit my account info and previous posts.
-Markup : * As a user, I want to be able to scroll through pictures without seeing long lists of comments.
-Markup : * As a user, I want social authorization so I can just sign in with my Facebook, Instagram, or Twitter.
-Markup : * As a user, I want to be able to delete posts, comments, and my site account.
+* As a user, I want to login to my account from the welcome page.
+* As a user, I want the menu to be intuitive and easy to read.
+* As a user, I want to be able to access/edit my account info and previous posts.
+* As a user, I want to be able to scroll through pictures without seeing long lists of comments.
+* As a user, I want social authorization so I can just sign in with my Facebook, Instagram, or Twitter.
+* As a user, I want to be able to delete posts, comments, and my site account.
 
 
 ## Planned Workflow and Responsibilities
