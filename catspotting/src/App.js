@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-
+import './App.css';
 import About from './Components/About'
 import CommentForm from './Components/CommentForm'
 import CommentTemplate from './Components/CommentTemplate'
