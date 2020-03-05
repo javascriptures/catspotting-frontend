@@ -69,6 +69,7 @@ Deployment:
 - Page to see posts filtered by author, when author name matches username
 - Responsive design using Material UI & media queries
 - Social and JWT auth
+- About page with info about devs, links to githubs, explanation of app, links to cat related resources
 
 #### Silver
 
@@ -77,10 +78,10 @@ Deployment:
 - Images are uploaded files, not urls
 - Google maps for location integration - user can pin the spotted cat's location
 - More advanced color palette transitions
+- Testing on front and back ends
 
 #### Gold
 
-- Testing on front and back ends
 - Integrate Google Maps to search posts by location/display map on post detail page
 
 #### Platinum
@@ -89,4 +90,3 @@ Deployment:
 - Sort by cat? May need to update model to include space for a name/id
 - Pin would then represent the cat's most recent location so as not to have duplicates
 - Groups for cat spotters based on location
-- Cat related resources linked
