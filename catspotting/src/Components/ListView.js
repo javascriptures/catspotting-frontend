@@ -4,6 +4,7 @@ const ListView = () => {
     //maps out and formats all the posts from the Posts API
     //fetches from /posts/
 
+    
     return null;
 };
 
