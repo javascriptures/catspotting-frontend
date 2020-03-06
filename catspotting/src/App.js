@@ -40,7 +40,7 @@ const App = () => {
   const handle_login = (e, data) => {
     e.preventDefault();
     //change the link here???
-    fetch('http://localhost:8000/token-auth', {
+    fetch('http://localhost:8000/api/token/obtain', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const App = () => {
 
   const handle_signup = (e, data) => {
     e.preventDefault();
-    fetch('http://localhost:8000/core/users/', {
+    fetch('http://localhost:8000/api/user/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
