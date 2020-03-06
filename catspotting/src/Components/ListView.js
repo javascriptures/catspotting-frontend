@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import error from '../images/error.png';
 import { Link, Route } from 'react-router-dom';
 import { APIURL } from '../config';
 import PostDetail from './PostDetail';
@@ -28,15 +27,15 @@ const ListView = () => {
     return (
       <div>
         <p>Sorry, we're working on it...</p>
-        <img src={error} alt="error kitty" />
+        <img src={require('./images/error.png')} alt="error kitty" />
       </div>
     );
   }
-
   return (
     <div>
       {posts.map(post => (
-        <Link to={`posts/${post._id}`}>
+          <div key={post.id}>
+        <Link to={`posts/${post.id}`}>
           <Route
             exact
             path={'/posts/:id'}
@@ -51,6 +50,7 @@ const ListView = () => {
             <p>View Comments</p>
           </div>
         </Link>
+        </div>
       ))}
     </div>
   );

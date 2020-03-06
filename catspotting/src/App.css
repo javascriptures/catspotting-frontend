@@ -1,12 +1,13 @@
-@font-face {
+ @font-face {
   font-family: 'Noteworthy Light';
   font-style: normal;
   font-weight: normal;
   src: local('Noteworthy Light'), url('./fonts/Noteworthy-Lt.woff') format('woff');
 }
 
-.headerContainer {
-  height: 800px;
+/* Header */
+
+ .headerContainer {
   position: relative;
 }
 
@@ -14,18 +15,15 @@ header {
   background-color: #D1A7A0;
   display: flex;
   align-items: center;
-  padding: 10px;
   grid-area: header;
-  max-height: 10%;
-}
-
-.alignHeader {
+  height: 110px
+  
 }
 
 .headerName {
   font-family: 'Noteworthy Light';
   font-size: 3.5rem;
   color: #F7EDE1;
-}
-
-
+  margin-left: 1rem;
+  margin-bottom: 4.5rem;
+} 

@@ -23,7 +23,7 @@ const App = () => {
             <Route exact path="/posts" component={ListView} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/user/create" component={Signup} />
             <Route exact path="/commentform" component={CommentForm} />
             <Route exact path="/commenttemplate" component={CommentTemplate} />
             <Route exact path="/posts/:id" component={PostDetail} />
