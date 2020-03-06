@@ -54,7 +54,6 @@ function PostDetail({match}){
     // }
 
 
-
     if (post) {
     return (
         <>
@@ -62,7 +61,7 @@ function PostDetail({match}){
         <p>{post.author}: {post.body}</p>
             <ul>
                 {post.comments.map(comment => 
-                <CommentTemplate comment={comment}/>
+    <p>{comment}</p>
                 )}
             </ul>
         

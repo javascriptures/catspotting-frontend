@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {BrowserRouter, withRouter, Route, Switch} from 'react-router-dom';
 import About from './Components/About'
@@ -14,6 +14,27 @@ import UserProfile from './Components/UserProfile'
 import Welcome from './Components/Welcome'
 
 const App = () => {
+
+  const [displayed_form, setDisplay_form] = useState('');
+  const [logged_in, setLogged_in] = useState(localStorage.getItem('token') ? true : false)
+  const [username, setUsername] = useState('')
+
+  useEffect (() => {
+    if(logged_in) {
+      fetch('change.this', {
+        headers: {
+          Authorization: `JWT ${localStorage.getItem('token')}`
+        }
+      })
+      .then(res => res.json())
+      .then(json => {
+        setUsername(json.username)
+      })
+    }
+  })
+
+
+
     return (
       <>
       <BrowserRouter>

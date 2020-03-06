@@ -48,7 +48,6 @@ const ListView = () => {
             <img src={post.img_url} alt="kitty post" />
             <h4>{post.author}</h4>
             <p>{post.body}</p>
-            <p>View Comments</p>
           </div>
         </Link>
         </div>
