@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { APIURL } from '../config';
 import CommentTemplate from './CommentTemplate'
 
+
 function PostDetail({match}){
     //shows post on a single page
     //maps all comments on the post and renders them through CommentTemplate
@@ -71,7 +72,7 @@ function PostDetail({match}){
 
     return (<div>
         <p>Oops!</p>
-        <img src={require("./images/broken.png")}/>
+        <img src={require("../images/broken.png")}/>
     </div>)
 };
 export default PostDetail;

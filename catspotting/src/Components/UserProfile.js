@@ -1,4 +1,5 @@
 import React from 'react';
+
 const UserProfile = () => {
     //imports user data from user API
     //shows posts and comments made by user

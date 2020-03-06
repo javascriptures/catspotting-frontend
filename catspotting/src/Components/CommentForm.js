@@ -1,4 +1,5 @@
 import React from 'react';
+
 const CommentForm = () => {
     //empty form that is called after CommentTemplate mapping
     //allows user to create and post a new comment

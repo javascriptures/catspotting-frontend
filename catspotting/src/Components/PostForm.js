@@ -1,4 +1,5 @@
 import React from 'react';
+
 const PostForm = () => {
     //blank form for posts
     //has input fields and buttons from Material UI

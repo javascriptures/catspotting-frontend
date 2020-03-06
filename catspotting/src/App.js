@@ -1,6 +1,6 @@
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
 import './App.css';
+import {BrowserRouter, withRouter, Route, Switch} from 'react-router-dom';
 import About from './Components/About'
 import CommentForm from './Components/CommentForm'
 import CommentTemplate from './Components/CommentTemplate'
@@ -16,7 +16,11 @@ import Welcome from './Components/Welcome'
 const App = () => {
     return (
       <>
-      <Header />
+      <BrowserRouter>
+
+        {
+        window.location.pathname!=='/' | '/login' | '/signup' ? <Header/>:null
+        }
         <main>
           <Switch>
             <Route exact path="/" component={Welcome} />
@@ -32,7 +36,8 @@ const App = () => {
             <Route exact path="/user/:id/" component={UserProfile} />
           </Switch>
         </main>
+      </BrowserRouter>
       </>
     );
   };
-  export default App;
+  export default withRouter(App);

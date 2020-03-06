@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 
 // window.onscroll = function() {scrollFunction()};
 
@@ -19,9 +21,25 @@ const Header = () => {
     return (
         <div className="headerContainer" id="navbar">
         <header>
-            <div className="alignHeader">
+            <div id="alignHeader">
                 <p className="headerName">CatSpotting</p>
             </div> 
+
+            <div>
+
+            </div>
+
+            <div className="iconContainer">
+                <Link to={'/posts'}>
+                    <img className="icons" id="home"src={require('../images/Home_icon.png')} alt="Home icon"/>
+                </Link>
+                <Link to={'/users/:id'}>
+                    <img className="icons" src={require('../images/User_icon.png')} alt="User icon"/>
+                </Link>
+                <Link to={'/about'}>
+                    <img className="icons" id="info" src={require('../images/Info_icon.png')} alt="Info icon"/>
+                </Link>
+            </div>
         </header>
         </div>
     );

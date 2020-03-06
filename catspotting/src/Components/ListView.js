@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import { APIURL } from '../config';
 import PostDetail from './PostDetail';
 
+
 const ListView = () => {
   //basically the homepage of the app: is accessible upon login or signup
   //maps out and formats all the posts from the Posts API
@@ -27,7 +28,7 @@ const ListView = () => {
     return (
       <div>
         <p>Sorry, we're working on it...</p>
-        <img src={require('./images/error.png')} alt="error kitty" />
+        <img src={require('../images/error.png')} alt="error kitty" />
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react';
+
 const CommentTemplate = ({comment}) => {
     //inherets id from PostDetail and renders the individual comment to be mapped out with the rest in PostDetail
     //has a body input form

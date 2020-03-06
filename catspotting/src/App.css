@@ -7,23 +7,63 @@
 
 /* Header */
 
- .headerContainer {
+.headerContainer {
   position: relative;
 }
+
 
 header {
   background-color: #D1A7A0;
   display: flex;
   align-items: center;
   grid-area: header;
-  height: 110px
-  
+  height: 110px;
+  justify-content: flex-end;
 }
 
 .headerName {
   font-family: 'Noteworthy Light';
   font-size: 3.5rem;
   color: #F7EDE1;
-  margin-left: 1rem;
+  margin-left: 2%;
   margin-bottom: 4.5rem;
+  position: absolute;
+  left: 0px;
+  top: -55px;
 } 
+
+#alignHeader {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.iconContainer {
+  display: flex;
+  padding: 1%;
+}
+
+.icons{
+  height: 50px;
+  position: relative;
+  right: 0px;
+  padding: 15px;
+}
+
+#info {
+  margin-right: 60%;
+}
+#home {
+  margin-left: 1%;
+}
+
+/* Welcome Page */
+
+.WelcomeHeader {
+  font-family: 'Noteworthy Light';
+  font-size: 3.5rem;
+  color: #D1A7A0;
+}
+
+video {
+  width: 300px;
+}
