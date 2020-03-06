@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { APIURL } from '../config';
+import CommentTemplate from './CommentTemplate'
 
 function PostDetail({match}){
     //shows post on a single page
@@ -44,15 +45,33 @@ function PostDetail({match}){
     //         });
     // }, []);
     
-    if (error) {
-        return (<div>
-            <p>Oops!</p>
-            <img src={require("./images/broken.png")}/>
-        </div>)
-    }
-    return (
-        <p>help</p>
-    )
-};
+    // if (error) {
+    //     return (<div>
+    //         <p>Oops!</p>
+    //         <img src={require("./images/broken.png")}/>
+    //     </div>)
+    // }
 
+
+
+    if (post) {
+    return (
+        <>
+        <img src={post.img_url}/>
+        <p>{post.author}: {post.body}</p>
+            <ul>
+                {post.comments.map(comment => 
+                <CommentTemplate comment={comment}/>
+                )}
+            </ul>
+        
+        </>
+    )
+    }
+
+    return (<div>
+        <p>Oops!</p>
+        <img src={require("./images/broken.png")}/>
+    </div>)
+};
 export default PostDetail;
