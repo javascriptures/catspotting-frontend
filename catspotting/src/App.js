@@ -106,7 +106,7 @@ const App = () => {
         ) : null}
         <Nav
             logged_in={logged_in}
-            displayed_form = {displayed_form}
+            display_form = {display_form}
             handle_logout = {handle_logout}
             />
             {form}
