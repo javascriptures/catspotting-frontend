@@ -6,7 +6,7 @@ import CommentForm from './Components/CommentForm';
 import CommentTemplate from './Components/CommentTemplate';
 import Header from './Components/Header';
 import ListView from './Components/ListView';
-import Login from './Components/Login';
+import Login from './Components/LoginForm';
 import PostDetail from './Components/PostDetail';
 import PostForm from './Components/PostForm';
 import Signup from './Components/Signup';
