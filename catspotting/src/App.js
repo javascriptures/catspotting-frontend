@@ -12,9 +12,12 @@ import PostForm from './Components/PostForm';
 import Signup from './Components/SignupForm';
 import UserProfile from './Components/UserProfile';
 import Welcome from './Components/Welcome';
+import Nav from './Components/Nav'
+import LoginForm from './Components/LoginForm'
+import SignupForm from './Components/SignupForm'
 
 const App = () => {
-  const [display_form, setDisplay_form] = useState('');
+  const [displayed_form, setDisplayed_form] = useState('');
   const [logged_in, setLogged_in] = useState(
     localStorage.getItem('token') ? true : false
   );
@@ -48,7 +51,7 @@ const App = () => {
     .then(json => {
       localStorage.setItem('token', json.token);
       setLogged_in(true);
-      setDisplay_form('');
+      setDisplayed_form('');
       setUsername(json.user.username);
     })
   }
@@ -66,7 +69,7 @@ const App = () => {
       .then(json => {
         localStorage.setItem('token', json.token);
         setLogged_in(true);
-        setDisplay_form('');
+        setDisplayed_form('');
         setUsername(json.user.username);
       });
   };
@@ -77,12 +80,13 @@ const App = () => {
     setUsername('');
   };
 
-  display_form = form => {
-    setDisplay_form(form);
+
+  const display_form = form => {
+    setDisplayed_form(form)
   };
 
   let form;
-  switch (display_form) {
+  switch (displayed_form) {
     case 'login':
       form = <LoginForm handle_login={handle_login} />;
       break;
@@ -102,7 +106,7 @@ const App = () => {
         ) : null}
         <Nav
             logged_in={logged_in}
-            display_form = {display_form}
+            displayed_form = {displayed_form}
             handle_logout = {handle_logout}
             />
             {form}
