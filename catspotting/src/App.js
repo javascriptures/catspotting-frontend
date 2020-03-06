@@ -9,7 +9,7 @@ import ListView from './Components/ListView';
 import Login from './Components/LoginForm';
 import PostDetail from './Components/PostDetail';
 import PostForm from './Components/PostForm';
-import Signup from './Components/Signup';
+import Signup from './Components/SignupForm';
 import UserProfile from './Components/UserProfile';
 import Welcome from './Components/Welcome';
 

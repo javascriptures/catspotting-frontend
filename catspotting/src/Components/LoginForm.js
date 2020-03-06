@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect, useRef } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // code borrowed from https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a
 
@@ -32,14 +32,18 @@ import PropTypes from 'prop-types';
 // the new state object and then we override the one
 // with the changed value.
 
+document.body.style = 'background: #E5D4C0;';
 class LoginForm extends Component {
   state = {
     username: '',
     password: ''
   };
 
+  // spread current user username/password into new state object and override one with changed value
   handle_change = e => {
+    // targeting name property on each input field
     const name = e.target.name;
+    // get value from in put that was changed
     const value = e.target.value;
     this.setState(prevstate => {
       const newState = { ...prevstate };
@@ -72,7 +76,7 @@ class LoginForm extends Component {
   }
 }
 
-export default Login;
+export default LoginForm;
 
 LoginForm.propTypes = {
   handle_login: PropTypes.func.isRequired
