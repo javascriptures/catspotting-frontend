@@ -32,7 +32,7 @@ import PropTypes from 'prop-types';
 // the new state object and then we override the one
 // with the changed value.
 
-document.body.style = 'background: #E5D4C0;';
+// document.body.style = 'background: #E5D4C0;';
 class LoginForm extends Component {
   state = {
     username: '',

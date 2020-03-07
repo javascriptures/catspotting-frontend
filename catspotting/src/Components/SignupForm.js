@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // code borrowed from https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a
 
-document.body.style = 'background: #E5D4C0;';
+// document.body.style = 'background: #E5D4C0;';
 
 class SignupForm extends Component {
   state = {
