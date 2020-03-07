@@ -13,7 +13,7 @@ const Welcome = () => {
         <p className="WelcomeHeader">Catspotting</p>
         </div>
         <div>
-        <video id="background-video" loop autoPlay>
+        <video id="background-video" autoPlay loop muted playsinline>
                 <source src={require('../images/Kawaiicat-PixTeller (1).mp4')} type="video/mp4" />
         </video>
         </div>
