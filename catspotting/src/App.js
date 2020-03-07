@@ -1,6 +1,7 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, withRouter, Route, Switch } from 'react-router-dom';
+import axiosInstance from '../src/axiosApi';
 import About from './Components/About';
 import CommentForm from './Components/CommentForm';
 import CommentTemplate from './Components/CommentTemplate';
@@ -12,9 +13,9 @@ import PostForm from './Components/PostForm';
 import Signup from './Components/SignupForm';
 import UserProfile from './Components/UserProfile';
 import Welcome from './Components/Welcome';
-import Nav from './Components/Nav'
-import LoginForm from './Components/LoginForm'
-import SignupForm from './Components/SignupForm'
+import Nav from './Components/Nav';
+import LoginForm from './Components/LoginForm';
+import SignupForm from './Components/SignupForm';
 
 const App = () => {
   const [displayed_form, setDisplayed_form] = useState('');
@@ -22,6 +23,7 @@ const App = () => {
     localStorage.getItem('token') ? true : false
   );
   const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   useEffect(() => {
     if (logged_in) {
@@ -39,22 +41,33 @@ const App = () => {
 
   const handle_login = (e, data) => {
     e.preventDefault();
+    try {
+      const response = axiosInstance.post('/token/obtain/');
+      console.log(response);
+      axiosInstance.defaults.headers['Authorization'] =
+        'JWT ' + response.data.access;
+      localStorage.setItem('access_token', response.data.access);
+      localStorage.setItem('refresh_token', response.data.refresh);
+      return data;
+    } catch (error) {
+      throw error;
+    }
     //change the link here???
-    fetch('http://localhost:8000/api/token/obtain', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(json => {
-      localStorage.setItem('token', json.token);
-      setLogged_in(true);
-      setDisplayed_form('');
-      setUsername(json.user.username);
-    })
-  }
+    // fetch('http://localhost:8000/api/token/obtain', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    //   .then(res => res.json())
+    //   .then(json => {
+    //     localStorage.setItem('token', json.token);
+    //     setLogged_in(true);
+    //     setDisplayed_form('');
+    //     setUsername(json.user.username);
+    //   });
+  };
 
   const handle_signup = (e, data) => {
     e.preventDefault();
@@ -76,13 +89,12 @@ const App = () => {
 
   const handle_logout = () => {
     localStorage.removeItem('token');
-    setLogged_in(false); 
+    setLogged_in(false);
     setUsername('');
   };
 
-
   const display_form = form => {
-    setDisplayed_form(form)
+    setDisplayed_form(form);
   };
 
   let form;
@@ -105,14 +117,12 @@ const App = () => {
           <Header />
         ) : null}
         <Nav
-            logged_in={logged_in}
-            display_form = {display_form}
-            handle_logout = {handle_logout}
-            />
-            {form}
-            <h3>
-              {logged_in ? `Hello,${username}`: 'Please Log In'}
-            </h3>
+          logged_in={logged_in}
+          display_form={display_form}
+          handle_logout={handle_logout}
+        />
+        {form}
+        <h3>{logged_in ? `Hello,${username}` : 'Please Log In'}</h3>
         <main>
           <Switch>
             <Route exact path="/" component={Welcome} />
@@ -122,7 +132,11 @@ const App = () => {
             <Route exact path="/user/create" component={Signup} />
             <Route exact path="/commenttemplate" component={CommentTemplate} />
             <Route exact path="/posts/:id" component={PostDetail} />
-            <Route exact path="/posts/:id/comments/:id" component={CommentForm}/>
+            <Route
+              exact
+              path="/posts/:id/comments/:id"
+              component={CommentForm}
+            />
             <Route exact path="/postform" component={PostForm} />
             <Route exact path="/user/:id/" component={UserProfile} />
           </Switch>
