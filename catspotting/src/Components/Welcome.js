@@ -17,10 +17,10 @@ const Welcome = () => {
         <video id="background-video" autoPlay loop muted playsinline>
                 <source src={require('../images/Kawaiicat-PixTeller (1).mp4')} type="video/mp4" />
         </video>
-        <Link to={'/token/obtain'}>
+        <Link to={'/token/obtain/'}>
             <button>Login</button>
         </Link>
-        <Link to={'/user/create'}>
+        <Link to={'/user/create/'}>
             <button>Sign up</button>
         </Link>
         </div>

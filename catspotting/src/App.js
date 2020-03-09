@@ -26,15 +26,15 @@ const App = () => {
       <UserContext.Provider value={{ user, setUser }}>
         <BrowserRouter>
           {/* only show header if User is NOT on the following paths */}
-          {(window.location.pathname !== '/' | '/login' | '/signup') ? (
+          {(window.location.pathname !== '/' | '/token/obtain/' | '/user/create/') ? (
             <Header />
           ) : null}
           <h3>{user ? `Hello,${user}` : 'Please Log In'}</h3>
           <main>
             <Switch>
               <Route exact path="/" component={Welcome} />
-              <Route exact path="/token/obtain" component={LoginForm} />
-              <Route exact path="/user/create" component={SignupForm} />
+              <Route exact path="/token/obtain/" component={LoginForm} />
+              <Route exact path="/user/create/" component={SignupForm} />
               <Route 
                 exact 
                 path="/postform" 

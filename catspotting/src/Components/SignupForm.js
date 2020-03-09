@@ -1,51 +1,71 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-// code borrowed from https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a
+import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom'; // This could also be done with the useHistory hook!
+import AuthForm from './AuthForm';
+import { APIURL } from '../config';
 
-// document.body.style = 'background: #E5D4C0;';
-
-class SignupForm extends Component {
-  state = {
+function SignupForm() {
+  const initialState = {
     username: '',
     password: ''
   };
-
-  handle_change = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
+  const url = `${APIURL}/user/create/`;
+  const [credentials, setCredentials] = useState(initialState);
+  const [redirect, setRedirect] = useState(null);
+  const [error, setError] = useState(false);
+  const handleChange = event => {
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
-
-  render() {
+  const handleSubmit = event => {
+    event.preventDefault();
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json; charset=UTF-8'
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(res => res.json())
+      .then(setRedirect)
+      .catch(setError);
+  };
+  if (redirect) {
     return (
-      <form onSubmit={e => this.props.handle_signup(e, this.state)}>
-        <h4>Sign Up</h4>
-        <label htmlFor="username">Username</label>
-        <input
-          type="test"
-          name="username"
-          value={this.state.username}
-          onChange={this.handle_change}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handle_change}
-        />
-        <input type="submit" />
-      </form>
+      <Redirect
+        to={{
+          pathname: '/token/obtain/',
+          state: credentials // passing state allows us to prepopulate the signin form
+        }}
+      />
     );
   }
+  return (
+    <div>
+      <h3>Sign Up</h3>
+      {error && (
+        <h4
+          style={{
+            color: 'white',
+            background: 'red',
+            padding: '1rem',
+            position: 'relative',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}
+          onClick={() => setError(false)}
+        >
+          Sorry, something went wrong. Please try again!
+          <span style={{ position: 'absolute', right: '.75rem', top: '.5rem' }}>
+            ✕
+          </span>
+        </h4>
+      )}
+      <AuthForm
+        credentials={credentials}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </div>
+  );
 }
 
-export default SignupForm;
-
-SignupForm.propTypes = {
-  handle_signup: PropTypes.func.isRequired
-};
+export default SignupForm

@@ -1,83 +1,80 @@
-import React, { Component, useState, useContext } from 'react';
-import PropTypes from 'prop-types';
-// code borrowed from https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a
+import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom';
+import AuthForm from './AuthForm';
+import { UserContext } from './UserContext';
+import { APIURL } from '../config';
 
-// const Login = () => {
-//     document.body.style = 'background: #E5D4C0;';
-
-//     //login page with input forms and buttons from Material UI
-//     //handleSubmit function goes in here
-//     //interacts with User API
-//     //input forms: username, password, and social auth
-//     return null;
-// };
-
-// Every time the user types or pastes something
-// inside an input field in the form, the onChange
-// event listener is fired and calls handleChange.
-// In React, when we want to use the event asynchronously
-// we should call event.persist().  Learn more here:
-// https://reactjs.org/docs/events.html#event-pooling
-// We'll get the value from the input that was changed
-// using event.target.value.
-// We'll use the name of the input to find out which
-// property in our state object to update using
-// event.target.name.  MAKE SURE THE INPUT HAS A NAME
-// and the name matches the property name in the object
-// exactly.
-// With the spread operator (watch this great video if
-// you're not really clear on how spread works:
-// https://www.youtube.com/watch?v=pYI-UuZVtHI) we can
-// spread the current movies properties and values into
-// the new state object and then we override the one
-// with the changed value.
-
-// document.body.style = 'background: #E5D4C0;';
-class LoginForm extends Component {
-  state = {
-    username: '',
-    password: ''
+function LoginForm(props) {
+  const { user, setUser } = useContext(UserContext);
+  const { state: historyState } = props.history.location;
+  const initialState = {
+    name: historyState ? historyState.name : '',
+    email: historyState ? historyState.email : '',
+    password: historyState ? historyState.password : ''
   };
-
-  // spread current user username/password into new state object and override one with changed value
-  handle_change = e => {
-    // targeting name property on each input field
-    const name = e.target.name;
-    // get value from in put that was changed
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
+  const url = `${APIURL}/token/obtain/`;
+  const [credentials, setCredentials] = useState(initialState);
+  const [error, setError] = useState(false);
+  const handleChange = event => {
+    setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
-
-  render() {
-    return (
-      <form onSubmit={e => this.props.handle_login(e, this.state)}>
-        <h4>Log In</h4>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.handle_change}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handle_change}
-        />
-        <input type="submit" />
-      </form>
-    );
+  const handleSubmit = event => {
+    event.preventDefault();
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json; charset=UTF-8'
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(res => res.json())
+      .then(setUser)
+      .catch(setError);
+  };
+  if (user) {
+    return <Redirect to="/" />;
   }
+  return (
+    <div>
+      <h3>Sign In</h3>
+      {historyState && (
+        <h4
+          style={{
+            color: 'white',
+            background: 'green',
+            padding: '1rem',
+            position: 'relative',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}
+        >
+          Thanks for signing up! Please login.
+        </h4>
+      )}
+      {error && (
+        <h4
+          style={{
+            color: 'white',
+            background: 'red',
+            padding: '1rem',
+            position: 'relative',
+            cursor: 'pointer',
+            userSelect: 'none'
+          }}
+          onClick={() => setError(false)}
+        >
+          Sorry, something went wrong. Please try again!
+          <span style={{ position: 'absolute', right: '.75rem', top: '.5rem' }}>
+            ✕
+          </span>
+        </h4>
+      )}
+      <AuthForm
+        credentials={credentials}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
+    </div>
+  );
 }
-
 export default LoginForm;
-
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired
-};
