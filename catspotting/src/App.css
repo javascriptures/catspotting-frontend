@@ -67,3 +67,43 @@ header {
 video {
   width: 300px;
 }
+
+/* PostContainer */
+
+.show-description p {
+  height: 100px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.description {
+  color: rgba(255,255,255,1);
+  background: black;
+  /* background: linear-gradient(bottom, rgba(0,20,0,1), rgba(0,50,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,20,0,1), rgba(0,50,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,20,0,1), rgba(0,50,0,.4)); */
+  opacity: 0.5;
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 25px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+  color: white;
+}
+
+#postContainer {
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+}
