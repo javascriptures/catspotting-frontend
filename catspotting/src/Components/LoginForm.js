@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 // code borrowed from https://medium.com/@dakota.lillie/django-react-jwt-authentication-5015ee00ef9a
 
