@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Route } from 'react-router-dom';
 import { APIURL } from '../config';
 import PostDetail from './PostDetail';
+import PostContainer from './PostContainer'
 
 
 const ListView = () => {
@@ -11,6 +12,7 @@ const ListView = () => {
 
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
+
 
   useEffect(() => {
     fetch(`${APIURL}/posts`)
@@ -23,6 +25,7 @@ const ListView = () => {
         setError(true);
       });
   }, []);
+
 
   if (error) {
     return (
@@ -44,11 +47,7 @@ const ListView = () => {
               return <PostDetail match={props.match} />;
             }}
           />
-          <div>
-            <img src={post.img_url} alt="kitty post" />
-            <h4>{post.author}</h4>
-            <p>{post.body}</p>
-          </div>
+          <PostContainer post={post}/>
         </Link>
         </div>
       ))}

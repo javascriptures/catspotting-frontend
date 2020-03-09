@@ -61,7 +61,7 @@ function PostDetail({match}){
         <p>{post.author}: {post.body}</p>
             <ul>
                 {post.comments.map(comment => 
-    <p>{comment}</p>
+                    <p>{comment}</p>
                 )}
             </ul>
         

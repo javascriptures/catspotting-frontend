@@ -22,7 +22,9 @@ const Header = () => {
         <div className="headerContainer" id="navbar">
         <header>
             <div id="alignHeader">
+                <Link to={'/posts'}>
                 <p className="headerName">CatSpotting</p>
+                </Link>
             </div> 
 
             <div>
