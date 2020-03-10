@@ -5,6 +5,7 @@
   src: local('Noteworthy Light'), url('./fonts/Noteworthy-Lt.woff') format('woff');
 }
 
+
 /* Header */
 
 .headerContainer {
@@ -161,6 +162,13 @@ small {
   padding: 1%;
   margin-left: auto;
   margin-right: auto;
+}
+.addicon {
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  margin-right: 40px;
+  margin-top: 30px;
 }
 
 /* About Page */

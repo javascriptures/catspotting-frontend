@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { UserContext } from './Components/UserContext';
 import './App.css';
-import {
-  BrowserRouter,
-  withRouter,
-  Route,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+import {BrowserRouter, withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import axiosInstance from '../src/axiosApi';
 import About from './Components/About';
 import CommentForm from './Components/CommentForm';
@@ -25,6 +19,7 @@ import { APIURL } from './config';
 
 const App = () => {
   const [user, setUser] = useState(null);
+
 
   return (
     <>
@@ -56,13 +51,14 @@ const App = () => {
                 <Route 
                 exact 
                 path="/posts" 
-                render={props => {
-                  if (user) {
-                    return <ListView {...props} />;
-                  } else {
-                    return <Redirect to="/" />;
-                  }
-                }}
+                component={ListView}
+                // render={props => {
+                //   if (user) {
+                //     return <ListView {...props} />;
+                //   } else {
+                //     return <Redirect to="/" />;
+                //   }
+                // }}
                 />
               <Route 
                 exact 
@@ -113,13 +109,14 @@ const App = () => {
               <Route
                 exact
                 path="/user/:id/"
-                render={props => {
-                  if (user) {
-                    return <UserProfile {...props} />;
-                  } else {
-                    return <Redirect to="/" />;
-                  }
-                }}
+                component={UserProfile}
+                // render={props => {
+                //   if (user) {
+                //     return <UserProfile {...props} />;
+                //   } else {
+                //     return <Redirect to="/" />;
+                //   }
+                // }}
               />
             </Switch>
           </main>
