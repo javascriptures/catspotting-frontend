@@ -8,7 +8,7 @@ function SignupForm() {
     username: '',
     password: ''
   };
-  const url = `${APIURL}/user/create/`;
+  const url = `${APIURL}/api/user/create/`;
   const [credentials, setCredentials] = useState(initialState);
   const [redirect, setRedirect] = useState(null);
   const [error, setError] = useState(false);
@@ -32,7 +32,7 @@ function SignupForm() {
     return (
       <Redirect
         to={{
-          pathname: '/token/obtain/',
+          pathname: '/api/token/obtain/',
           state: credentials // passing state allows us to prepopulate the signin form
         }}
       />
@@ -68,4 +68,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm
+export default SignupForm;
