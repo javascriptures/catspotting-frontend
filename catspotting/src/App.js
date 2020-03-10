@@ -52,30 +52,30 @@ const App = () => {
                     return <Redirect to="/" />;
                   }
                 }}
-              />
-              <Route
-                exact
-                path="/posts"
-                component={ListView}
-                // render={props => {
-                //   if (user) {
-                //     return <ListView {...props} />;
-                //   } else {
-                //     return <Redirect to="/" />;
-                //   }
-                // }}
-              />
-              <Route
-                exact
-                path="/about"
+                />
+                <Route 
+                exact 
+                path="/posts" 
                 render={props => {
                   if (user) {
-                    return <About {...props} />;
+                    return <ListView {...props} />;
                   } else {
                     return <Redirect to="/" />;
                   }
                 }}
-              />
+                />
+              <Route 
+                exact 
+                path="/about" 
+                component={About}
+                // render={props => {
+                //   if (user) {
+                //     return <About {...props} />;
+                //   } else {
+                //     return <Redirect to="/" />;
+                //   }
+                // }}
+                />
               <Route
                 exact
                 path="/commenttemplate"
