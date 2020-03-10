@@ -9,7 +9,7 @@ const About = () => {
     return (
         <>
         <div className="aboutdiv">
-        <h1 className="aboutheader">About</h1>
+        <p className="aboutheader">About</p>
         <p>Catspotting is a social platform made by cat lovers for cat lovers. We'll put more of a description in here later.</p>
 
         <h3>Meet the devs</h3>

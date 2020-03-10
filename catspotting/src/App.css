@@ -195,3 +195,39 @@ small {
   font-size: 3.5rem;
   margin: 0;
 }
+
+/* Post form */
+
+.postformdiv form{ display: table;      }
+.postformdiv p{ display: table-row;  }
+
+.postformdiv {
+  margin-top: 5.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.textfield {
+  display: table-cell; 
+}
+.postformdiv label {
+  font-family: 'Noteworthy Light';
+  display: table-cell;
+  padding: 0 8px 0 0;
+  text-align: right;
+}
+.postKitty {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.postKittyContainer {
+  display:flex;
+}
+.postheader {
+  font-family: 'Noteworthy Light';
+  font-size: 3rem;
+  margin: 0 1%;
+  color: #D1A7A0;
+}
