@@ -8,7 +8,7 @@ function SignupForm() {
     username: '',
     password: ''
   };
-  const url = `${APIURL}/api/user/create/`;
+  const url = `${APIURL}/api/users/`;
   const [credentials, setCredentials] = useState(initialState);
   const [redirect, setRedirect] = useState(null);
   const [error, setError] = useState(false);

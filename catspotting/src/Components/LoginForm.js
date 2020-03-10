@@ -12,7 +12,7 @@ function LoginForm(props) {
     email: historyState ? historyState.email : '',
     password: historyState ? historyState.password : ''
   };
-  const url = `${APIURL}/token/obtain/`;
+  const url = `${APIURL}/api/token/obtain/`;
   const [credentials, setCredentials] = useState(initialState);
   const [error, setError] = useState(false);
   const handleChange = event => {
@@ -32,7 +32,8 @@ function LoginForm(props) {
       .catch(setError);
   };
   if (user) {
-    return <Redirect to="/" />;
+    return;
+    // <Redirect to="/posts" />;
   }
   return (
     <div>
