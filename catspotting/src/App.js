@@ -49,13 +49,14 @@ const App = () => {
                 <Route 
                 exact 
                 path="/posts" 
-                render={props => {
-                  if (user) {
-                    return <ListView {...props} />;
-                  } else {
-                    return <Redirect to="/" />;
-                  }
-                }}
+                component={ListView}
+                // render={props => {
+                //   if (user) {
+                //     return <ListView {...props} />;
+                //   } else {
+                //     return <Redirect to="/" />;
+                //   }
+                // }}
                 />
               <Route 
                 exact 

@@ -34,10 +34,11 @@ const ListView = () => {
     );
   }
   return (
-    <div>
-      <div>{user}</div>
+    <>
+    <div>{user}</div>
+    <div className="listviewcontainer">
       {posts.map(post => (
-        <div key={post.id}>
+        <div key={post.id} className="listitems">
           <Link to={`posts/${post.id}`}>
             <Route
               exact
@@ -51,6 +52,7 @@ const ListView = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
