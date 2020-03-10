@@ -51,6 +51,9 @@ const PostForm = () => {
                 </p>
             </form>
         </div>
+        <div className="postbutton">
+                <button className="welcomebuttons" id="postbutton">Post!</button>
+                </div>
         </>
     );
 }

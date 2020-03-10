@@ -10,7 +10,7 @@ const About = () => {
         <>
         <div className="aboutdiv">
         <p className="aboutheader">About</p>
-        <p>Catspotting is a social platform made by cat lovers for cat lovers. We'll put more of a description in here later.</p>
+        <p className="devtext">Catspotting is a social platform made by cat lovers for cat lovers. We'll put more of a description in here later.</p>
 
         <h3>Meet the devs</h3>
         <div className="headshotdiv">
