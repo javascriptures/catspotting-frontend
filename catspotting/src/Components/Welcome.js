@@ -11,17 +11,15 @@ const Welcome = () => {
     return(
         <>
         <div className="Welcome">
-        <p className="WelcomeHeader">Catspotting</p>
-        </div>
-        <div>
+        <p id="WelcomeHeader">Catspotting</p>
         <video id="background-video" autoPlay loop muted playsinline>
                 <source src={require('../images/Kawaiicat-PixTeller (1).mp4')} type="video/mp4" />
         </video>
-        <Link to={'/token/obtain/'}>
-            <button>Login</button>
+        <Link to={'/token/obtain/'} style={{ textDecoration: 'none' }}>
+            <button className="welcomebuttons">Login</button>
         </Link>
-        <Link to={'/user/create/'}>
-            <button>Sign up</button>
+        <Link to={'/user/create/'} style={{ textDecoration: 'none' }}>
+            <button className="welcomebuttons">Signup</button>
         </Link>
         </div>
         </>

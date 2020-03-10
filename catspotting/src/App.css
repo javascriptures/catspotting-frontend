@@ -57,15 +57,43 @@ header {
 }
 
 /* Welcome Page */
-
-.WelcomeHeader {
+.Welcome {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+#WelcomeHeader {
   font-family: 'Noteworthy Light';
-  font-size: 3.5rem;
+  font-size: 5.5rem;
   color: #D1A7A0;
+  display: block;
+  margin: 4rem 0 2rem 0;
 }
 
 video {
-  width: 300px;
+  width: 260px;
+  padding: 0;
+  margin: 0;
+}
+.welcomebuttons {
+  background-color: #D1A7A0;
+  color: #F7EDE1;
+  border-radius: 35px;
+  padding: 14px 140px;
+  width: 100%;
+  table-layout: fixed;
+  display: block; 
+  align-self: center;
+  text-align: center;
+  font-family: 'Noteworthy Light';
+  font-size: 30px;
+  margin: 4% 0;
+}
+.welcomebuttons:hover {
+  opacity: 0.75;
 }
 
 /* PostContainer */

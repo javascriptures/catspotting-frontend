@@ -36,7 +36,7 @@ const App = () => {
           '/user/create/' ? (
             <Header />
           ) : null}
-          <h3>{user ? `Hello,${user}` : 'Please Log In'}</h3>
+          {/* <h3>{user ? `Hello,${user}` : 'Please Log In'}</h3> */}
           <main>
             <Switch>
               <Route exact path="/" component={Welcome} />
