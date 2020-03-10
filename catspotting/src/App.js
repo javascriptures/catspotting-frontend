@@ -36,7 +36,6 @@ const App = () => {
           '/user/create/' ? (
             <Header />
           ) : null}
-          {/* <h3>{user ? `Hello,${user}` : 'Please Log In'}</h3> */}
           <main>
             <Switch>
               <Route exact path="/" component={Welcome} />
@@ -45,13 +44,14 @@ const App = () => {
               <Route
                 exact
                 path="/postform"
-                render={props => {
-                  if (user) {
-                    return <PostForm {...props} />;
-                  } else {
-                    return <Redirect to="/" />;
-                  }
-                }}
+                component={PostForm}
+                // render={props => {
+                //   if (user) {
+                //     return <PostForm {...props} />;
+                //   } else {
+                //     return <Redirect to="/" />;
+                //   }
+                // }}
                 />
                 <Route 
                 exact 

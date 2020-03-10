@@ -184,13 +184,14 @@ small {
 .headshots {
   width: 10%;
   border-radius: 50%;
-  margin: 2rem;
+  margin: 1.5rem;
   float: left
 }
 .aboutdiv {
-  padding: 1.5%;
+  padding: 0 1.5%;
 }
 .aboutheader {
   font-family: 'Noteworthy Light';
   font-size: 3.5rem;
+  margin: 0;
 }
