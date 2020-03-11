@@ -32,8 +32,7 @@ function LoginForm(props) {
       .catch(setError);
   };
   if (user) {
-    return;
-    // <Redirect to="/posts" />;
+    return <Redirect to="/posts" />;
   }
   return (
     <div>
