@@ -234,18 +234,23 @@ small {
 
 /* Post form */
 
-.postformdiv form{ display: table;      }
-.postformdiv p{ display: table-row;  }
+.postformdiv form{ 
+  display: table;
+  border-spacing: 13px;
+}
+.postformdiv p{ 
+  display: table-row;
+  }
 
 .postformdiv {
-  margin-top: 4.5rem;
+  margin-top: 2.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
 .textfield {
-  display: table-cell; 
+  display: table-cell;
 }
 .postformdiv label {
   font-family: 'Sen', sans-serif;
@@ -275,4 +280,5 @@ small {
   display: flex;
   justify-content: center;
   margin-left: 4%;
+  margin-top: 0;
 }
