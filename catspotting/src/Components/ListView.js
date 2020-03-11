@@ -37,30 +37,30 @@ const ListView = () => {
   }
   return (
     <>
-    <div>{user}</div>
-    <div className="listviewcontainer">
-    <div className="addicon">
-      <Link to={'/postform'}>
-    <Fab aria-label="add">
-      <AddIcon style={{fill: "#D1A7A0"}}/>
-    </Fab>
-    </Link>
-    </div>
-      {posts.map(post => (
-        <div key={post.id} className="listitems">
-          <Link to={`posts/${post.id}`}>
-            <Route
-              exact
-              path={'/posts/:id'}
-              render={props => {
-                return <PostDetail match={props.match} />;
-              }}
-            />
-            <PostContainer post={post} />
+      <div>{user}</div>
+      <div className="listviewcontainer">
+        <div className="addicon">
+          <Link to={'/postform'}>
+            <Fab aria-label="add">
+              <AddIcon style={{ fill: '#D1A7A0' }} />
+            </Fab>
           </Link>
         </div>
-      ))}
-    </div>
+        {posts.map(post => (
+          <div key={post.id} className="listitems">
+            <Link to={`posts/${post.id}`}>
+              <Route
+                exact
+                path={'/posts/:id'}
+                render={props => {
+                  return <PostDetail match={props.match} />;
+                }}
+              />
+              <PostContainer post={post} />
+            </Link>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
