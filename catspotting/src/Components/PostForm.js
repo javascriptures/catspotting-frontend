@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 import TextField from '@material-ui/core/TextField';
 
 const PostForm = () => {
-    const [post, setPost] = useState('');
+    const [post, setPost] = useState({});
     const [error, setError] = useState(false);
+    const {user, setUser} = useContext(UserContext);
 
     const url = `${APIURL}/posts`
     //blank form for posts
@@ -17,7 +19,7 @@ const PostForm = () => {
             method: 'POST',
             headers: {
               'content-type': 'application/json; charset=UTF-8',
-              Authorization: `Bearer user token`
+              Authorization: `Bearer ${user.access}`,
             },
             body: JSON.stringify(post)
           })

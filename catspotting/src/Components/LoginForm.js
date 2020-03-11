@@ -34,12 +34,13 @@ function LoginForm(props) {
 
   useEffect(() => {
     return () => {
-      console.log({credentials},"cleaned up");
+      console.log({user},"cleaned up");
     };
   }, []);
 
   if (user) {
-
+    console.log(user);
+    console.log(credentials);
     return <Redirect to="/posts" />;
   }
   return (
