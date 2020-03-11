@@ -32,12 +32,6 @@ function LoginForm(props) {
       .catch(setError);
   };
 
-  useEffect(() => {
-    return () => {
-      console.log({user},"cleaned up");
-    };
-  }, []);
-
   if (user) {
     console.log(user);
     console.log(credentials);

@@ -26,9 +26,11 @@ const PostForm = () => {
             .then(res => res.json())
             .then(setPost)
             .catch(error => {
-                console.log('Error: ', error);
+                console.log('Logged error: ', error);
                 setError(true);
-        });
+                console.log(user);
+                        
+            });
     }
 
     return (
