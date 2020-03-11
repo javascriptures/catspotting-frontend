@@ -25,7 +25,7 @@ function AuthForm({ credentials, handleChange, handleSubmit }) {
         type="password"
         required
       ></input>
-      <button type="submit">
+      <button type="submit" onClick={handleSubmit}>
         {location.pathname === '/token/obtain/' ? 'Sign In' : 'Sign Up'}
       </button>
     </form>

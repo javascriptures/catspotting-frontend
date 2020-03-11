@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import AuthForm from './AuthForm';
 import { UserContext } from './UserContext';
@@ -31,7 +31,15 @@ function LoginForm(props) {
       .then(setUser)
       .catch(setError);
   };
-  if (credentials) {
+
+  useEffect(() => {
+    return () => {
+      console.log({credentials},"cleaned up");
+    };
+  }, []);
+
+  if (user) {
+
     return <Redirect to="/posts" />;
   }
   return (

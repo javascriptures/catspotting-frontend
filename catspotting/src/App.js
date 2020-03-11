@@ -107,15 +107,14 @@ const App = () => {
               />
               <Route
                 exact
-                path="/user/:id/"
-                component={UserProfile}
-                // render={props => {
-                //   if (user) {
-                //     return <UserProfile {...props} />;
-                //   } else {
-                //     return <Redirect to="/" />;
-                //   }
-                // }}
+                path="/users/:id/"
+                render={props => {
+                  if (user) {
+                    return <UserProfile {...props} />;
+                  } else {
+                    return <Redirect to="/" />;
+                  }
+                }}
               />
             </Switch>
           </main>
