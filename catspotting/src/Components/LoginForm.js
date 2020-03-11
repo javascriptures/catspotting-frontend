@@ -31,7 +31,7 @@ function LoginForm(props) {
       .then(setUser)
       .catch(setError);
   };
-  if (user) {
+  if (credentials) {
     return <Redirect to="/posts" />;
   }
   return (

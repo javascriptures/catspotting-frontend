@@ -1,4 +1,4 @@
 export const APIURL =
-  window.location.hostname === 'localhost'
-    ? 'http://localhost:8000'
-    : 'htttp://catspotting-api.herokuapp.com';
+  window.location.hostname === 'heroku'
+    ? 'https://catspotting-api.herokuapp.com'
+    : 'https://catspotting-api.herokuapp.com';
