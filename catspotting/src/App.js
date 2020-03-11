@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { UserContext } from './Components/UserContext';
 import './App.css';
-import {BrowserRouter, withRouter, Route, Switch, Redirect} from 'react-router-dom';
+import {withRouter, Route, Switch, Redirect} from 'react-router-dom';
 import axiosInstance from '../src/axiosApi';
 import About from './Components/About';
 import CommentForm from './Components/CommentForm';
@@ -24,7 +24,6 @@ const App = () => {
   return (
     <>
       <UserContext.Provider value={{ user, setUser }}>
-        <BrowserRouter>
           {/* only show header if User is NOT on the following paths */}
           {(window.location.pathname !== '/') |
           '/token/obtain/' |
@@ -120,7 +119,6 @@ const App = () => {
               />
             </Switch>
           </main>
-        </BrowserRouter>
       </UserContext.Provider>
     </>
   );
