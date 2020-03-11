@@ -17,7 +17,7 @@ function PostContainer({post}){
     }
 return(
     <div className={`${imgActive ? "show-description" : ""}`} id="postContainer">
-            <h4>{post.location}</h4>
+            <h5 className="locationTag">{post.location}</h5>
             <img src={post.img_url} alt="kitty post" onMouseEnter={showDetails} onMouseLeave={mouseAway} style={{opacity: opacity}} className="kittyPics"/>
             <p className="description" id="description" onMouseEnter={showDetails} onMouseLeave={mouseAway} >{post.author} <small>{post.body} <br /> 
                 {post.comments.map(comment => 

@@ -1,3 +1,11 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
  @font-face {
   font-family: 'Noteworthy Light';
   font-style: normal;
@@ -104,6 +112,10 @@ video {
   height: 100px;
 }
 
+.locationTag {
+  color: black;
+}
+
 .show-description small {
   opacity: 1;
 }
@@ -176,6 +188,7 @@ small {
 
 .aboutdiv h3 {
   font-family: 'Sen', sans-serif;
+  
 }
 
 .headshotdiv {
@@ -208,6 +221,7 @@ small {
   font-family: 'Sen', sans-serif;
   font-size: 3.5rem;
   margin: 0;
+  color: rgb(146, 117, 112);
 }
 
 /* Post form */
@@ -243,7 +257,7 @@ small {
   font-family: 'Sen', sans-serif;
   font-size: 3rem;
   margin: 1%;
-  color: #D1A7A0;
+  color: rgb(146, 117, 112);
   align-self: center;
 }
 #postbutton {
