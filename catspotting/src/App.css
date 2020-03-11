@@ -14,6 +14,7 @@ html,body
 }
 
 @import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 /* Header */
 
@@ -138,6 +139,9 @@ video {
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
   text-indent: 2.5%;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
   
 }
 .comment {
@@ -158,6 +162,10 @@ small {
   max-height: 20rem;
   margin-left: auto;
   margin-right: auto;
+}
+#smalldescription {
+  font-weight: 200;
+  font-size: 13px;
 }
 
 /* List View */

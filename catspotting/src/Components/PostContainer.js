@@ -19,7 +19,7 @@ return(
     <div className={`${imgActive ? "show-description" : ""}`} id="postContainer">
             <h5 className="locationTag">{post.location}</h5>
             <img src={post.img_url} alt="kitty post" onMouseEnter={showDetails} onMouseLeave={mouseAway} style={{opacity: opacity}} className="kittyPics"/>
-            <p className="description" id="description" onMouseEnter={showDetails} onMouseLeave={mouseAway} >{post.author} <small>{post.body} <br /> 
+            <p className="description" id="description" onMouseEnter={showDetails} onMouseLeave={mouseAway} >{post.owner} <small id="smalldescription">{post.body} <br /> 
                 {post.comments.map(comment => 
                     <p className="comment">{comment}</p>
                 )}</small></p>
