@@ -58,10 +58,10 @@ function PostDetail({match}){
     return (
         <>
         <img src={post.img_url}/>
-        <p>{post.author}: {post.body}</p>
+        <p>{post.owner}: {post.body} </p>
             <ul>
                 {post.comments.map(comment => 
-                    <p>{comment}</p>
+                    <p>{comment.id}</p>
                 )}
             </ul>
         

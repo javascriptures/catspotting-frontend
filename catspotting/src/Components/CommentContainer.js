@@ -1,16 +1,16 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-// const CommentContainer = ({comments}) => {
+const CommentContainer = ({comments}) => {
     
-//     console.log(comments)
-//     return(
-//         <>
-//         {comments.map(comment => (
-//         <li>{comment}</li>
-//         ))}
-//         </>
-//     )
+    console.log(comments)
+    return(
+        <>
+        {comments.map(comment => (
+        <li>{comment}</li>
+        ))}
+        </>
+    )
     
-// }
+}
 
-// export default CommentContainer
+export default CommentContainer

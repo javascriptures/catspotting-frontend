@@ -8,12 +8,18 @@ const PostForm = () => {
     const [error, setError] = useState(false);
     const {user, setUser} = useContext(UserContext);
 
-    const url = `${APIURL}/posts`
+    const url = `${APIURL}/posts/`
     //blank form for posts
     //has input fields and buttons from Material UI
     //input fields: username?, body, title?, location?, img_url/image upload
+
+    const handleChange = event => {
+        setPost({...post, [event.target.name]: event.target.value})
+    }
+
     const handleSubmit = event => {
         event.preventDefault();
+        console.log(post);
         //POST request to API
         fetch(url, {
             method: 'POST',
@@ -43,20 +49,20 @@ const PostForm = () => {
             <form onSubmit={handleSubmit} >
                 <p>
                 <label>Image: </label>
-                <TextField className="textfields" id="outlined-multiline-static" label="Image url" multiline rows="4" variant="outlined" value={post.img_url}/> <br />
+                <TextField className="textfields" id="outlined-multiline-static" label="Image url" multiline rows="4" variant="outlined" value={post.img_url} name="img_url" onChange={handleChange}/> <br />
                 </p>
                 <p>
                 <label>Description: </label>
-                <TextField className="textfields" id="outlined-multiline-static" label="Description" multiline rows="4" variant="outlined" value={post.body}/> <br />
+                <TextField className="textfields" id="outlined-multiline-static" label="Description" multiline rows="4" variant="outlined" value={post.body} name="body" onChange={handleChange}/> <br />
                 </p>
                 <p>
                 <label>Location: </label>
-                <TextField className="textfields" id="outlined-basic" label="Home, USA" variant="outlined" value={post.location}/>
+                <TextField className="textfields" id="outlined-basic" label="Home, USA" variant="outlined" value={post.location} name="location" onChange={handleChange}/>
                 </p>
             </form>
         </div>
         <div className="postbutton">
-                <button className="welcomebuttons" id="postbutton">Post!</button>
+                <button className="welcomebuttons" id="postbutton" onClick={handleSubmit}>Post!</button>
                 </div>
         </>
     );

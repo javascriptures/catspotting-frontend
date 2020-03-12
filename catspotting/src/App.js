@@ -25,11 +25,7 @@ const App = () => {
     <>
       <UserContext.Provider value={{ user, setUser }}>
           {/* only show header if User is NOT on the following paths */}
-          {(window.location.pathname !== '/') |
-          '/token/obtain/' |
-          '/user/create/' ? (
-            <Header />
-          ) : null}
+          {user && <Header />}
           <main>
             <Switch>
               <Route exact path="/" component={Welcome} />

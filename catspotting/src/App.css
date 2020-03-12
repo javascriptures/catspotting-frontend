@@ -282,3 +282,9 @@ small {
   margin-left: 4%;
   margin-top: 0;
 }
+
+/* Post Detail */
+
+.postdetailbody {
+  color: black;
+}

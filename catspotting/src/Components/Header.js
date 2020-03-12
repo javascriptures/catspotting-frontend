@@ -17,6 +17,7 @@ const Header = () => {
     //imports and routes icons like Home, About, and UserProfile
     //~gold feature~ transitions upon scroll
 
+    document.body.style = 'background: white;'
 
     return (
         <div className="headerContainer" id="navbar">
