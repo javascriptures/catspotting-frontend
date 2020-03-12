@@ -15,6 +15,8 @@ const ListView = () => {
   const [posts, setPosts] = useState([]);
   const [error, setError] = useState(false);
 
+  // need to be able to fetch id of each comment in a comment container then reference that in the post detail and that will render all the usernames w/the comment
+
   useEffect(() => {
     fetch(`${APIURL}/posts`)
       .then(response => response.json())
