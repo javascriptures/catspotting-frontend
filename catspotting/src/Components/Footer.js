@@ -6,15 +6,15 @@ const Footer = () => {
     return (
         <div className="footerContainer">
             <footer>
-                <p>© 2020 Catspotting</p>
+                <p className="footername">© 2020 Catspotting</p>
                 <a to={'https://github.com/javascriptures/catspotting-frontend'}>
                 <img src={require('../images/github.png')} className="github"/>
                 </a>
-                <p>Jordan Taylor</p>
+                <p className="footername">Jordan Taylor</p>
                 <a href='https://github.com/javascriptures'>
                 <img src={require('../images/github.png')} className="github"/>
                 </a>
-                <p>Jaimie Lowe</p>
+                <p className="footername">Jaimie Lowe</p>
                 <a href='https://github.com/jnlsings'>
                 <img src={require('../images/github.png')} className="github"/>
                 </a>

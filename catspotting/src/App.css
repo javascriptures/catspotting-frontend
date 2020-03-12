@@ -335,7 +335,7 @@ small {
 .github {
   width: 20px;
   margin-top: 15px;
-  margin-right: 40px;
+  margin-right: 20px;
   margin-left: 8px;
 }
 footer {
@@ -346,5 +346,8 @@ footer {
   bottom: 0;
   height: 2.5rem;
   background-color: #f7ede1;
-  margin-bottom: 5px;
+  padding-bottom: 15px;
+}
+.footername {
+  margin-left: 20px;
 }
