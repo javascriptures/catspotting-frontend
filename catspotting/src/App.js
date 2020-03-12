@@ -13,6 +13,7 @@ import UserProfile from './Components/UserProfile';
 import Welcome from './Components/Welcome';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
+import Footer from './Components/Footer'
 import { APIURL } from './config';
 
 const App = () => {
@@ -28,9 +29,11 @@ const App = () => {
             <Route exact path="/" component={Welcome} />
             <Route exact path="/token/obtain/" component={Signin} />
             <Route exact path="/user/create/" component={Signup} />
-            <Route exact path="/postform" component={PostForm} />
-            <Route exact path="/posts" component={ListView} />
-            <Route exact path="/about" component={About} />
+            {user && <Route exact path="/postform" component={PostForm} />}
+            {user && <Route exact path="/posts" component={ListView} />}
+            {user && <Route exact path="/about" component={About} />}
+            {user && <Route exact path="/posts/:id" component={PostDetail}/>}
+            {user && <Route exact path="/users/:id/" component={UserProfile}/>}
             <Route
               exact
               path="/commenttemplate"
@@ -44,18 +47,6 @@ const App = () => {
             />
             <Route
               exact
-              path="/posts/:id"
-              component={PostDetail}
-              // render={props => {
-              //   if (user) {
-              //     return <PostDetail {...props} />;
-              //   } else {
-              //     return <Redirect to="/" />;
-              //   }
-              // }}
-            />
-            <Route
-              exact
               path="/posts/:id/comments/:id"
               render={props => {
                 if (user) {
@@ -65,19 +56,9 @@ const App = () => {
                 }
               }}
             />
-            <Route
-              exact
-              path="/users/:id/"
-              render={props => {
-                if (user) {
-                  return <UserProfile {...props} />;
-                } else {
-                  return <Redirect to="/" />;
-                }
-              }}
-            />
           </Switch>
         </main>
+        {user && <Footer/>}
       </UserContext.Provider>
     </>
   );
