@@ -49,7 +49,7 @@ const ListView = () => {
         </div>
         {posts.map(post => (
           <div key={post.id} className="listitems">
-            <Link to={`${post.id}`}>
+            <Link to={`/posts/${post.id}`}>
               <Route
                 exact
                 path={'/posts/:id'}

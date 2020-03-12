@@ -29,15 +29,17 @@ function PostDetail({ match }) {
   if (post) {
     return (
       <>
+      <div key={post.id}>
         <img src={post.img_url} />
         <p>
-          {post.owner}: {post.body}{' '}
+          {post.owner}: {post.body}
         </p>
         <ul>
           {post.comments.map(comment => (
-            <p>{comment.id}</p>
+            <p>{comment}</p>
           ))}
         </ul>
+        </div>
       </>
     );
   }
