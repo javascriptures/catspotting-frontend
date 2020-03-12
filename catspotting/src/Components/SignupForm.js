@@ -3,18 +3,22 @@ import { Redirect } from 'react-router-dom'; // This could also be done with the
 import AuthForm from './AuthForm';
 import { APIURL } from '../config';
 
-function SignupForm() {
+function Signup() {
   const initialState = {
     username: '',
     password: ''
   };
+
   const url = `${APIURL}/users/`;
+
   const [credentials, setCredentials] = useState(initialState);
   const [redirect, setRedirect] = useState(null);
   const [error, setError] = useState(false);
+
   const handleChange = event => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
+
   const handleSubmit = event => {
     event.preventDefault();
     fetch(url, {
@@ -28,6 +32,7 @@ function SignupForm() {
       .then(setRedirect)
       .catch(setError);
   };
+
   if (redirect) {
     return (
       <Redirect
@@ -38,6 +43,7 @@ function SignupForm() {
       />
     );
   }
+
   return (
     <div>
       <h3>Sign Up</h3>
@@ -68,4 +74,4 @@ function SignupForm() {
   );
 }
 
-export default SignupForm;
+export default Signup;

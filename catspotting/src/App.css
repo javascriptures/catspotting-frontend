@@ -1,16 +1,17 @@
-html,body
-{
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
- @font-face {
+@font-face {
   font-family: 'Noteworthy Light';
   font-style: normal;
   font-weight: normal;
-  src: local('Noteworthy Light'), url('./fonts/Noteworthy-Lt.woff') format('woff');
+  src: local('Noteworthy Light'),
+    url('./fonts/Noteworthy-Lt.woff') format('woff');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
@@ -22,9 +23,8 @@ html,body
   position: relative;
 }
 
-
 header {
-  background-color: #D1A7A0;
+  background-color: #d1a7a0;
   display: flex;
   align-items: center;
   grid-area: header;
@@ -35,13 +35,13 @@ header {
 .headerName {
   font-family: 'Noteworthy Light';
   font-size: 3.5rem;
-  color: #F7EDE1;
+  color: #f7ede1;
   margin-left: 2%;
   margin-bottom: 4.5rem;
   position: absolute;
   left: 0px;
   top: -55px;
-} 
+}
 
 #alignHeader {
   display: flex;
@@ -53,7 +53,7 @@ header {
   padding: 1%;
 }
 
-.icons{
+.icons {
   height: 50px;
   position: relative;
   right: 0px;
@@ -79,7 +79,7 @@ header {
 #WelcomeHeader {
   font-family: 'Noteworthy Light';
   font-size: 5.5rem;
-  color: #D1A7A0;
+  color: #d1a7a0;
   display: block;
   margin: 4rem 0 2rem 0;
 }
@@ -90,13 +90,13 @@ video {
   margin: 0;
 }
 .welcomebuttons {
-  background-color: #D1A7A0;
-  color: #F7EDE1;
+  background-color: #d1a7a0;
+  color: #f7ede1;
   border-radius: 35px;
   padding: 14px 140px;
   width: 100%;
   table-layout: fixed;
-  display: block; 
+  display: block;
   align-self: center;
   text-align: center;
   font-family: 'Noteworthy Light';
@@ -123,7 +123,7 @@ video {
 
 .description {
   width: 100%;
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
   background: black;
   /* background: linear-gradient(bottom, rgba(0,20,0,1), rgba(0,50,0,.4));
   background: -webkit-linear-gradient(bottom, rgba(0,20,0,1), rgba(0,50,0,.4));
@@ -135,14 +135,13 @@ video {
   bottom: 0;
   margin: 0;
   height: 30px;
-  transition: height .5s;
-  -webkit-transition: height .5s;
-  -moz-transition: height .5s;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  -moz-transition: height 0.5s;
   text-indent: 2.5%;
   font-weight: 500;
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  
 }
 .comment {
   text-indent: 5%;
@@ -196,7 +195,6 @@ small {
 
 .aboutdiv h3 {
   font-family: 'Sen', sans-serif;
-  
 }
 
 .headshotdiv {
@@ -220,7 +218,7 @@ small {
   width: 10%;
   border-radius: 50%;
   margin: 1.5rem;
-  float: left
+  float: left;
 }
 .aboutdiv {
   padding: 0 1.5%;
@@ -234,13 +232,13 @@ small {
 
 /* Post form */
 
-.postformdiv form{ 
+.postformdiv form {
   display: table;
   border-spacing: 13px;
 }
-.postformdiv p{ 
+.postformdiv p {
   display: table-row;
-  }
+}
 
 .postformdiv {
   margin-top: 2.5rem;
@@ -264,7 +262,7 @@ small {
   left: 0;
 }
 .postKittyContainer {
-  display:flex;
+  display: flex;
 }
 .postheader {
   font-family: 'Sen', sans-serif;
@@ -279,7 +277,7 @@ small {
 .postbutton {
   display: flex;
   justify-content: center;
-  margin-left: 4%;
+  /* margin-left: 4%; */
   margin-top: 0;
 }
 
@@ -287,4 +285,40 @@ small {
 
 .postdetailbody {
   color: black;
+}
+
+/* Auth Form */
+
+.authformdiv form {
+  display: table;
+  border-spacing: 13px;
+}
+.authformdiv p {
+  display: table-row;
+}
+
+.authformdiv {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+
+.authformdiv label {
+  font-family: 'Sen', sans-serif;
+  display: table-cell;
+  padding: 0 8px 0 0;
+  text-align: right;
+}
+
+#authbutton {
+  width: 26%;
+}
+
+.authbutton {
+  display: flex;
+  justify-content: center;
+  /* margin-left: 4%; */
+  margin-top: 0;
 }

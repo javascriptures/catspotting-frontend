@@ -4,7 +4,7 @@ import AuthForm from './AuthForm';
 import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 
-function LoginForm(props) {
+function Signin(props) {
   const { user, setUser } = useContext(UserContext);
   const { state: historyState } = props.history.location;
   const initialState = {
@@ -33,9 +33,7 @@ function LoginForm(props) {
   };
 
   if (user) {
-    console.log(user);
-    console.log(credentials);
-    return <Redirect to="/posts" />;
+    return <Redirect to="/posts/" />;
   }
   return (
     <div>
@@ -80,4 +78,4 @@ function LoginForm(props) {
     </div>
   );
 }
-export default LoginForm;
+export default Signin;

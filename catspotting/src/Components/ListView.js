@@ -39,7 +39,6 @@ const ListView = () => {
   }
   return (
     <>
-      {/* <div>{user}</div> */}
       <div className="listviewcontainer">
         <div className="addicon">
           <Link to={'/postform'}>

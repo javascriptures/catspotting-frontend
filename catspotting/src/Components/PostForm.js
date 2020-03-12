@@ -47,7 +47,6 @@ const PostForm = () => {
       <div className="postformdiv">
         <form onSubmit={handleSubmit}>
           <p>
-            <label>Image: </label>
             <TextField
               className="textfields"
               id="outlined-multiline-static"
@@ -58,11 +57,10 @@ const PostForm = () => {
               value={post.img_url}
               name="img_url"
               onChange={handleChange}
-            />{' '}
+            />
             <br />
           </p>
           <p>
-            <label>Description: </label>
             <TextField
               className="textfields"
               id="outlined-multiline-static"
@@ -73,15 +71,14 @@ const PostForm = () => {
               value={post.body}
               name="body"
               onChange={handleChange}
-            />{' '}
+            />
             <br />
           </p>
           <p>
-            <label>Location: </label>
             <TextField
               className="textfields"
               id="outlined-basic"
-              label="Home, USA"
+              label="Location"
               variant="outlined"
               value={post.location}
               name="location"
