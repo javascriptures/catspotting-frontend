@@ -14,6 +14,7 @@ import Welcome from './Components/Welcome';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Footer from './Components/Footer'
+import PostEdit from './Components/PostEdit';
 import { APIURL } from './config';
 
 const App = () => {
@@ -33,7 +34,7 @@ const App = () => {
             {user && <Route exact path="/posts" component={ListView} />}
             {user && <Route exact path="/about" component={About} />}
             <Route exact path="/posts/:id" component={PostDetail}/>
-            <Route 
+            <Route exact path="/posts/:id/edit" component={PostEdit}/>
             {user && <Route exact path="/users/:id/" component={UserProfile}/>}
             <Route
               exact

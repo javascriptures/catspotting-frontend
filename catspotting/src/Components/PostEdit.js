@@ -4,13 +4,14 @@ import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 import TextField from '@material-ui/core/TextField';
 
-const PostEdit = () => {
+const PostEdit = (props) => {
   const history = useHistory();
-  const [post, setPost] = useState({});
   const [error, setError] = useState(false);
-  const { user, setUser } = useContext(UserContext);
+  const [post, setPost] = useState(null);
+  const { user } = useContext(UserContext);
+  console.log(post);
 
-  const url = `${APIURL}/posts/`;
+
   //blank form for posts
   //has input fields and buttons from Material UI
   //input fields: username?, body, title?, location?, img_url/image upload
@@ -23,8 +24,8 @@ const PostEdit = () => {
     event.preventDefault();
     console.log(post);
     //POST request to API
-    fetch(url, {
-      method: 'POST',
+    fetch(`${APIURL}/posts/${post.id}`, {
+      method: 'PUT',
       headers: {
         'content-type': 'application/json; charset=UTF-8',
         Authorization: `Bearer ${user.access}`
@@ -40,8 +41,6 @@ const PostEdit = () => {
       });
       history.goBack();
   };
-
-  useEffect(handleSubmit);
 
   
   return (

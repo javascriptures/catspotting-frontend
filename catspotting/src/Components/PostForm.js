@@ -15,11 +15,11 @@ const PostForm = () => {
   //has input fields and buttons from Material UI
   //input fields: username?, body, title?, location?, img_url/image upload
 
-  const handleChange = event => {
+  function handleChange(event){
     setPost({ ...post, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = event => {
+  function handleSubmit(event){
     event.preventDefault();
     console.log(post);
     //POST request to API
@@ -41,9 +41,6 @@ const PostForm = () => {
       history.goBack();
   };
 
-  useEffect(handleSubmit);
-
-  
   return (
     <>
       <div className="postKittyContainer">

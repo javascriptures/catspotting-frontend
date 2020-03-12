@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import {Redirect, useHistory} from 'react-router-dom'
+import {Redirect, useHistory, Link } from 'react-router-dom'
 import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 import CommentTemplate from './CommentTemplate';
@@ -32,14 +32,18 @@ function PostDetail({ match }) {
 
   useMountEffect(fetchData);
 
-  function handleEdit() {
-    return(
-      <Redirect to={{PostEdit}}/>
-    )
-  }
+  // function handleEdit() {
+  //   return(
+  //     <Redirect to={{
+  //       pathname: `/posts/${match.params.id}/edit`,
+  //       state: {post}
+  //     }}/>
+  //   )
+  // }
 
-  const handleDelete = () => {
+  const handleDelete = (event) => {
     //POST request to API
+    event.preventDefault();
     fetch(`${APIURL}/posts/${match.params.id}`, {
       method: 'DELETE',
       headers: {
@@ -51,7 +55,6 @@ function PostDetail({ match }) {
       .catch(error => {
         console.log('Logged error: ', error);
         setError(true);
-        console.log(user);
       });
       history.goBack();
   };
@@ -69,8 +72,9 @@ function PostDetail({ match }) {
           <p className="body">
           {post.body}
           </p>
-
+          <Link to={PostEdit} {...post}>
           <img src={require('../images/edit.png')} className="icons"/>
+          </Link>
           <img src={require('../images/delete.png')}className="icons" onClick={handleDelete}/>
         </div>
         <ul>
