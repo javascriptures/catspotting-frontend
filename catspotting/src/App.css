@@ -364,3 +364,37 @@ footer {
 .signoutpage {
   margin: .5%;
 }
+
+/* PostDetail */
+.descriptioncontainer {
+  align-self:flex-start;
+  display: flex;
+  flex-direction: row;
+  margin: 1% 0 0 1%;
+  align-items: baseline;
+}
+.owner {
+  font-family: 'Sen', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.body {
+  font-family: 'Roboto', sans-serif;
+  padding: 4px;
+  font-size: 1rem;
+}
+#user {
+  font-size: 1rem;
+}
+#comment {
+  font-size: 0.8rem;
+}
+.detailcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.postimage {
+  width: 50%;
+}

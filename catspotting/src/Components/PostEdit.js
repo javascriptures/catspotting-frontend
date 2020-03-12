@@ -4,7 +4,7 @@ import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 import TextField from '@material-ui/core/TextField';
 
-const PostForm = () => {
+const PostEdit = () => {
   const history = useHistory();
   const [post, setPost] = useState({});
   const [error, setError] = useState(false);
@@ -56,6 +56,7 @@ const PostForm = () => {
             <TextField
               className="textfields"
               id="outlined-multiline-static"
+              defaultValue={post.img_url}
               label="Image url"
               multiline
               rows="4"
@@ -70,6 +71,7 @@ const PostForm = () => {
             <TextField
               className="textfields"
               id="outlined-multiline-static"
+              defaultValue={post.body}
               label="Description"
               multiline
               rows="4"
@@ -84,6 +86,7 @@ const PostForm = () => {
             <TextField
               className="textfields"
               id="outlined-basic"
+              defaultValue={post.location}
               label="Location"
               variant="outlined"
               value={post.location}
@@ -105,4 +108,4 @@ const PostForm = () => {
     </>
   );
 };
-export default PostForm;
+export default PostEdit;

@@ -32,8 +32,9 @@ const App = () => {
             {user && <Route exact path="/postform" component={PostForm} />}
             {user && <Route exact path="/posts" component={ListView} />}
             {user && <Route exact path="/about" component={About} />}
-            {user && <Route exact path="/posts/:id" component={PostDetail}/>}
-            <Route exact path="/users/:id/" component={UserProfile}/>
+            <Route exact path="/posts/:id" component={PostDetail}/>
+            <Route 
+            {user && <Route exact path="/users/:id/" component={UserProfile}/>}
             <Route
               exact
               path="/commenttemplate"

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footerContainer">
             <footer>
                 <p className="footername">© 2020 Catspotting</p>
-                <a to={'https://github.com/javascriptures/catspotting-frontend'}>
+                <a href={'https://github.com/javascriptures/catspotting-frontend'}>
                 <img src={require('../images/github.png')} className="github"/>
                 </a>
                 <p className="footername">Jordan Taylor</p>
