@@ -12,7 +12,7 @@ const Welcome = () => {
         <>
         <div className="Welcome">
         <p id="WelcomeHeader">Catspotting</p>
-        <video id="background-video" autoPlay loop muted playsinline>
+        <video id="background-video" autoPlay loop muted playsInline>
                 <source src={require('../images/Kawaiicat-PixTeller (1).mp4')} type="video/mp4" />
         </video>
         <Link to={'/token/obtain/'} style={{ textDecoration: 'none' }}>

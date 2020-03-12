@@ -33,7 +33,7 @@ const App = () => {
             {user && <Route exact path="/posts" component={ListView} />}
             {user && <Route exact path="/about" component={About} />}
             {user && <Route exact path="/posts/:id" component={PostDetail}/>}
-            {user && <Route exact path="/users/:id/" component={UserProfile}/>}
+            <Route exact path="/users/:id/" component={UserProfile}/>
             <Route
               exact
               path="/commenttemplate"

@@ -5,6 +5,7 @@ import { UserContext } from './UserContext';
 import { APIURL } from '../config';
 
 function Signin(props) {
+  document.body.style = 'background: white;';
   const { user, setUser } = useContext(UserContext);
   const { state: historyState } = props.history.location;
   const initialState = {
@@ -29,12 +30,13 @@ function Signin(props) {
     })
       .then(res => res.json())
       .then(setUser)
-      .catch(setError);
-  };
+      .catch(error => {
+        console.log('Error: ', error);
+        setError(true);
+        return <Redirect to={'/'} />
+  })
+}
 
-  if (user) {
-    return <Redirect to="/posts/" />;
-  }
   return (
     <div>
       <h3>Sign In</h3>
@@ -45,7 +47,6 @@ function Signin(props) {
             background: 'green',
             padding: '1rem',
             position: 'relative',
-            cursor: 'pointer',
             userSelect: 'none'
           }}
         >
@@ -59,7 +60,6 @@ function Signin(props) {
             background: 'red',
             padding: '1rem',
             position: 'relative',
-            cursor: 'pointer',
             userSelect: 'none'
           }}
           onClick={() => setError(false)}
@@ -70,6 +70,7 @@ function Signin(props) {
           </span>
         </h4>
       )}
+      {user && <Redirect to="/posts/" />}
       <AuthForm
         credentials={credentials}
         handleChange={handleChange}

@@ -36,7 +36,9 @@ function PostDetail({ match }) {
         </p>
         <ul>
           {post.comments.map(comment => (
+            <div key={comment}>
             <p>{comment}</p>
+            </div>
           ))}
         </ul>
         </div>

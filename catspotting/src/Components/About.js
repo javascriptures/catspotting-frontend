@@ -8,10 +8,9 @@ const About = () => {
 
     return (
         <>
-        <div className="aboutdiv">
         <p className="aboutheader">About</p>
         <p className="devtext">Catspotting is a social platform made by cat lovers for cat lovers. We'll put more of a description in here later.</p>
-
+        <div className="aboutdiv">
         <h3>Meet the devs</h3>
         <div className="headshotdiv">
             <div id="devprofile">

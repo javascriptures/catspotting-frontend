@@ -4,6 +4,7 @@ import AuthForm from './AuthForm';
 import { APIURL } from '../config';
 
 function Signup() {
+  document.body.style = 'background: white;';
   const initialState = {
     username: '',
     password: ''

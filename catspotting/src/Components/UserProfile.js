@@ -1,5 +1,5 @@
 import { UserContext } from './UserContext';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import React, { useContext } from 'react';
 
 
@@ -9,11 +9,19 @@ const UserProfile = () => {
     //(this will all be on a single page)
     //allows user to edit or delete previous posts
     const { user, setUser } = useContext(UserContext);
+    function handleClick() {
+        return (
+            <Redirect to={'/'}/>
+        )
+    }
     return (
         <>
-        <Link to="/" onClick={() => setUser(null)}>
-              Sign Out
-        </Link>
+        <div className="signoutpage">
+        <p className="aboutheader">Hi, Username!</p>
+        <div className="signoutcontainer">
+        <button className="welcomebuttons" id="signout" onClick={handleClick}>Sign out</button>
+        </div>
+        </div>
         </>
     )
 };
