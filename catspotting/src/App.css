@@ -219,6 +219,7 @@ small {
   border-radius: 50%;
   margin: 1.5rem;
   float: left;
+  margin-top: 3.5%;
 }
 .aboutdiv {
   padding: 0 1.5%;
@@ -279,12 +280,6 @@ small {
   justify-content: center;
   /* margin-left: 4%; */
   margin-top: 0;
-}
-
-/* Post Detail */
-
-.postdetailbody {
-  color: black;
 }
 
 /* Auth Form */
@@ -408,7 +403,7 @@ footer {
 .postimage {
   width: 50%;
 }
-.icons{
+.editicons{
   height: 1.6rem;
 }
 .descriptioncontainer {

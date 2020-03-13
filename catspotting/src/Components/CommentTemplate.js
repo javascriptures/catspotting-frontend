@@ -20,7 +20,6 @@ useEffect(() =>
                 console.log('Error: ', error);
               }), [setComments])
 
-console.log(comments)
 
 return (
     <ul>

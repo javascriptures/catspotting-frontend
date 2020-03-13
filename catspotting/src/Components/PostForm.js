@@ -21,7 +21,6 @@ const PostForm = () => {
 
   function handleSubmit(event){
     event.preventDefault();
-    console.log(post);
     //POST request to API
     fetch(url, {
       method: 'POST',
@@ -36,7 +35,6 @@ const PostForm = () => {
       .catch(error => {
         console.log('Logged error: ', error);
         setError(true);
-        console.log(user);
       });
       history.goBack();
   };

@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import {Redirect, useHistory, Link} from 'react-router-dom'
 import { UserContext } from './UserContext';
 import { APIURL } from '../config';
-import CommentTemplate from './CommentTemplate';
-import PostEdit from './PostEdit'
 import TextField from '@material-ui/core/TextField';
 
 function PostDetail({ match }) {
@@ -24,7 +22,6 @@ function PostDetail({ match }) {
   function fetchData() {
     fetch(`${APIURL}/posts/${match.params.id}`)
       .then(response => response.json())
-      // .then(response => {console.log(response)})
       .then(data => setPost(data))
       .catch(error => {
         console.log(error);
@@ -54,7 +51,6 @@ function PostDetail({ match }) {
       .catch(error => {
         console.log('Logged error: ', error);
         setError(true);
-        console.log(user);
       });
       setEdit(false);
   }
@@ -72,7 +68,6 @@ function PostDetail({ match }) {
       .catch(error => {
         console.log('Logged error: ', error);
         setError(true);
-        console.log(user);
       });
       history.goBack();
   };
@@ -94,8 +89,8 @@ function PostDetail({ match }) {
           </p>
           </div>
           <div className="icondiv">
-          <img src={require('../images/edit.png')} className="icons" onClick={() => setEdit(true)}/>
-          <img src={require('../images/delete.png')}className="icons" onClick={handleDelete}/>
+          <img src={require('../images/edit.png')} className="editicons" onClick={() => setEdit(true)}/>
+          <img src={require('../images/delete.png')}className="editicons" onClick={handleDelete}/>
           </div>
         </div>
         {edit &&
