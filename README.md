@@ -21,18 +21,11 @@ The Catspotting team primarily used a centralized git workflow to build the app.
 
 ## Browser View 1
 
-
+<img width="1440" alt="Screen Shot 2020-03-13 at 8 06 08 AM" src="https://user-images.githubusercontent.com/57779829/76636684-b50da180-6506-11ea-9c68-8ec0e81c8c5f.png">
 
 ## Browser View 2
 
-
-
-## Mobile View 1
-
-
-## Mobile View 2
-
-
+<img width="1425" alt="Screen Shot 2020-03-13 at 8 42 45 AM" src="https://user-images.githubusercontent.com/57779829/76636722-c5be1780-6506-11ea-9466-ee8bcf302da6.png">
 
 ## Features
 
@@ -47,7 +40,7 @@ The Catspotting team primarily used a centralized git workflow to build the app.
 
 **In the future, we aspire to add the following functionality:**
 
-- Create, edit, and delete functionality for comments as well as posts
+- Create, edit, and delete functionality for comments
 - User profile page displaying that user's activity
 - Improve design responsivity
 - Add links to cat related resources on About page
