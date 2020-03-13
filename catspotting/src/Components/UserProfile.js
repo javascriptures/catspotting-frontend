@@ -16,7 +16,7 @@ const UserProfile = () => {
         <p className="aboutheader">Hi, Username!</p>
         <div className="signoutcontainer">
         <Link to="/" onClick={() => setUser(null)}>
-        <button className="welcomebuttons" id="signout">Sign out</button>
+        <button className="welcomebuttons" id="authbutton">Sign out</button>
         </Link>
         </div>
         </div>

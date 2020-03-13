@@ -93,7 +93,7 @@ const PostForm = () => {
       <div className="postbutton">
         <button
           className="welcomebuttons"
-          id="postbutton"
+          id="authbutton"
           onClick={handleSubmit}
         >
           Post!

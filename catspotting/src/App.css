@@ -313,7 +313,8 @@ small {
 }
 
 #authbutton {
-  width: 26%;
+  padding: 10px 50px;
+  width: 325px;
 }
 
 .authbutton {
@@ -367,21 +368,31 @@ footer {
 
 /* PostDetail */
 .descriptioncontainer {
-  align-self:flex-start;
-  display: flex;
-  flex-direction: row;
-  margin: 1% 0 0 1%;
-  align-items: baseline;
+  position: relative;
+  display: inline-flex; 
+  align-items: center;
+}
+.tagline {
+  position: relative;
+  left: -50%;
+  display: inline-flex;
+  align-items: center;
+}
+.icondiv {
+  position: absolute;
+  right: -50%;
 }
 .owner {
   font-family: 'Sen', sans-serif;
   font-weight: bold;
   font-size: 1.2rem;
+  /* grid-area: 1 / 1 / 2 / 2; */
 }
 .body {
   font-family: 'Roboto', sans-serif;
   padding: 4px;
   font-size: 1rem;
+  /* grid-area: 1 / 2 / 3 / 2; */
 }
 #user {
   font-size: 1rem;
@@ -392,9 +403,16 @@ footer {
 .detailcontainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .postimage {
   width: 50%;
+}
+.icons{
+  height: 1.6rem;
+}
+.descriptioncontainer {
+  display: inline-flex;
+  align-items: baseline;
+  width: 25%;
 }

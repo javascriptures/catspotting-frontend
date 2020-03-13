@@ -85,14 +85,18 @@ function PostDetail({ match }) {
         <p>{post.location}</p>
         <img src={post.img_url} className="postimage"/>
         <div className="descriptioncontainer">
+          <div className="tagline">
           <p className="owner">
           {post.owner}:
           </p>
           <p className="body">
           {post.body}
           </p>
+          </div>
+          <div className="icondiv">
           <img src={require('../images/edit.png')} className="icons" onClick={() => setEdit(true)}/>
           <img src={require('../images/delete.png')}className="icons" onClick={handleDelete}/>
+          </div>
         </div>
         {edit &&
         <div>
@@ -139,7 +143,7 @@ function PostDetail({ match }) {
           <div className="postbutton">
         <button
           className="welcomebuttons"
-          id="postbutton"
+          id="editbutton"
           onClick={handleSubmit}
         >
           Post!
@@ -149,7 +153,7 @@ function PostDetail({ match }) {
         </div>}
         <ul>
           {post.comments && post.comments.map(comment => (
-            <div key={comment} className="descriptioncontainer">
+            <div key={comment} className="descripticoncontainer">
             <p className="owner" id="user">User:</p> 
             <p className="body" id="comment">{comment}</p>
             </div>
