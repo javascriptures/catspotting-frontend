@@ -34,7 +34,6 @@ const App = () => {
             {user && <Route exact path="/posts" component={ListView} />}
             {user && <Route exact path="/about" component={About} />}
             <Route exact path="/posts/:id" component={PostDetail}/>
-            <Route exact path="/posts/:id/edit" component={PostEdit}/>
             {user && <Route exact path="/users/:id/" component={UserProfile}/>}
             <Route
               exact

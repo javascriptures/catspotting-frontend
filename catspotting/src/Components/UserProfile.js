@@ -9,17 +9,15 @@ const UserProfile = () => {
     //(this will all be on a single page)
     //allows user to edit or delete previous posts
     const { user, setUser } = useContext(UserContext);
-    function handleClick() {
-        return (
-            <Redirect to={'/'}/>
-        )
-    }
+
     return (
         <>
         <div className="signoutpage">
         <p className="aboutheader">Hi, Username!</p>
         <div className="signoutcontainer">
-        <button className="welcomebuttons" id="signout" onClick={handleClick}>Sign out</button>
+        <Link to="/" onClick={() => setUser(null)}>
+        <button className="welcomebuttons" id="signout">Sign out</button>
+        </Link>
         </div>
         </div>
         </>
