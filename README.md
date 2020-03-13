@@ -15,6 +15,7 @@ On the landing page, the user may either create a profile or sign in if they alr
 ## The Making of the App
 
 For our mockups and other planning info, see our [planning repo](https://github.com/javascriptures/catspotting-frontend/blob/master/planning/PROPOSAL.md)
+For the API, see our [back end repo](https://github.com/jnlsings/catspotting-backend)
 
 
 The Catspotting team primarily used a centralized git workflow to build the app. Once it became clear that the back end was its own massive endeavor, we split up, with Jaimie on the back end and Jordan writing the majority of the front end code.
@@ -26,6 +27,23 @@ The Catspotting team primarily used a centralized git workflow to build the app.
 ## Browser View 2
 
 <img width="1425" alt="Screen Shot 2020-03-13 at 8 42 45 AM" src="https://user-images.githubusercontent.com/57779829/76636722-c5be1780-6506-11ea-9466-ee8bcf302da6.png">
+
+## Technologies used
+
+- React
+- React Router for navigation
+- React Hooks
+- Fetch for API calls
+- Material UI, Flexbox for styling
+
+## Challenges, Bugs and Fixes
+
+- Originally we were storing tokens in localstorage, but that was not working well for us.  Asha Misra pointed us in the direction of useContext and Jennifer Meade helped us implement that.  Currently tokens are stored in UserContext and persist through the entire app!
+- App is not optimized for mobile
+- Cannot make/edit/delete comments (hasn't been built yet)
+- Comments do not display username (need to fix models in backend or add additional fetches to front)
+- Signin button only works on click and not on enter
+- On reload, post/:id logs user out but still displays page (minus header), should not logout on reload or if it does, they should be directed to the signin page at least
 
 ## Features
 
@@ -55,15 +73,6 @@ The Catspotting team primarily used a centralized git workflow to build the app.
 - Groups for users based on location
 - Ability to share posts externally
 
-
-## Technologies used
-
-- React
-- React Router for navigation
-- React Hooks
-- Fetch for API calls
-- Material UI, Flexbox for styling
-
 ## Contribution Guidelines
 
 - Fork and clone this repo
@@ -71,15 +80,6 @@ The Catspotting team primarily used a centralized git workflow to build the app.
 - Run npm i to install all dependencies
 - Run ‘npm run start’ to open the app in browser
 - Code away! If you wish to add a new feature to the currently existing application [submit an issue](https://github.com/javascriptures/catspotting-frontend/issues) detailing your changes
-
-## Challenges, Bugs and Fixes
-
-- Originally we were storing tokens in localstorage, but that was not working well for us.  Asha Misra pointed us in the direction of useContext and Jennifer Meade helped us implement that.  Currently tokens are stored in UserContext and persist through the entire app!
-- App is not optimized for mobile
-- Redirect on signup goes to wrong route - should be /token/obtain/ not api/token/obtain/
-- Cannot make/edit/delete comments (hasn't been built yet)
-- Comments do not display username (need to fix models in backend or add additional fetches to front)
-- Signin button only works on click and not on enter
 
 ## Sources
 
